@@ -9,6 +9,8 @@
   scroll-behavior: smooth;
   scroll-padding-top: 2rem;
   font-family: "Poppins", sans-serif;
+  /* width: 100%; */
+  /* border: 2px solid red; */
 }
 :root {
   --main-color: #033a80;
@@ -30,7 +32,8 @@ body.active {
 body {
   background: var(--bg-color);
   color: var(--text-color);
-  overflow-x: hidden;
+  width: 100%;
+  /* overflow-x: hidden; */
 }
 *::selection {
   color: var(--bg-color);
@@ -72,6 +75,7 @@ header.shadow {
 }
 .navbar {
   display: flex;
+  /* border: 2px solid red; */
 }
 .navbar a {
   font-size: 1rem;
@@ -91,11 +95,12 @@ header.shadow {
 #darkmode {
   font-size: 22px;
   cursor: pointer;
+  /* border: 2px solid red; */
 }
 .home {
   /* border: 2px solid red; */
   position: relative;
-  width: 100%;
+  width: 100% !important;
   min-height: 100vh;
   display: grid;
   grid-template-columns: 0.2fr 1fr 1fr;
@@ -137,6 +142,7 @@ header.shadow {
   /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
+  /* border: 2px solid red; */
 }
 .social a {
   margin-bottom: 1rem;
@@ -158,6 +164,8 @@ header.shadow {
 }
 
 .about-container {
+  /* border: 2px solid yellow; */
+  width: 100% !important;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
@@ -199,6 +207,8 @@ button:hover {
 }
 
 .information {
+  /* border: 2px solid red; */
+
   margin: 1rem 0 1.4rem;
 }
 .information .info-box {
