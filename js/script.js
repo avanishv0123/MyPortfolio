@@ -3,6 +3,8 @@ let header = document.querySelector("header");
 let menu = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
 let downbtn = document.querySelector(".white");
+let about = document.querySelector(".about");
+let projects = document.querySelector(".projects");
 
 window.addEventListener("scroll", () => {
   header.classList.toggle("shadow", window.scrollY > 0);
@@ -23,9 +25,13 @@ darkmode.onclick = () => {
     darkmode.classList.replace("bx-moon", "bx-sun");
     document.body.classList.add("active");
     downbtn.style.color = "white";
+    about.style = "background-color:#0f0c27";
+    projects.style = "background-color:#0f0c27";
+    downbtn.style.border = "1px solid white";
   } else {
     darkmode.classList.replace("bx-sun", "bx-moon");
     document.body.classList.remove("active");
+    downbtn.style.color = "black";
   }
 };
 
