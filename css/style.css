@@ -133,8 +133,8 @@ ul li a.active {
   font-size: var(--big-font);
 }
 .home-text h2 {
-  font-size: 1.1rem;
-  font-weight: 400;
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 .home-text p {
   font-size: var(--p-font);
@@ -162,7 +162,7 @@ ul li a.active {
   color: #fff;
   padding: 11px 18px;
   border-radius: 0.5rem;
-  transition: 0.1s all ease;
+  transition: 0.3s all ease;
 }
 .btn:hover {
   color: #3b55e6;
@@ -482,7 +482,8 @@ form textarea {
   color: #fff;
 }
 .copyright a {
-  color: #22cf91;
+  color: #fcfcff;
+  font-weight: 600;
 }
 /* Making Responsive */
 @media (max-width: 991px) {
