@@ -505,6 +505,15 @@ form textarea {
     --big-font: 2.4rem;
     --medium-font: 1.2rem;
   }
+  .about-text p {
+    font-weight: 400;
+    text-align: justify;
+    padding: 0 13px;
+    font-size: 15px;
+  }
+  .about-img img {
+    width: 90%;
+  }
   header {
     padding: 11px 4%;
   }
