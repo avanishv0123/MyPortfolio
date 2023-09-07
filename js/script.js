@@ -32,6 +32,8 @@ darkmode.onclick = () => {
     darkmode.classList.replace("bx-sun", "bx-moon");
     document.body.classList.remove("active");
     downbtn.style.color = "black";
+    about.style = "background-color:#fff";
+    projects.style = "background-color:#fff";
   }
 };
 
