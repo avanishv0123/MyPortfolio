@@ -66,6 +66,7 @@ window.addEventListener("scroll", () => {
 
 function connect() {
   alert("Kindly Contact me from the social links given below....");
+  return false;
 }
 
 const button = document.querySelector("#button");
