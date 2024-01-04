@@ -182,7 +182,7 @@
       <h2>Contact Me</h2>
     </div>
     <div class="contact-form">
-      <form>
+      <form method="POST">
         <input type="text" placeholder="Your Name" name="name" />
         <input type="email" name="email" id="" placeholder="Your Email" />
         <textarea name="msgbox" id="" cols="30" rows="10" placeholder="Write Message Here..."></textarea>
