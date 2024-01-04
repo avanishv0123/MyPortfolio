@@ -67,14 +67,19 @@
       </div>
       <div class="about-text">
         <p>
-          Hello, I am Avanish Radheshyam Vishwakarma a 23-year-old FrontEnd Web Developer which holds 1 year experience
+          Hello, I am Avanish Radheshyam Vishwakarma a 23-year-old FrontEnd Web Developer which holds 1 year
+          experience
           as a Wordpress Developer and also worked as a shopify Developer.
-          I have completed my Masters Degree from Patkar Varde College, Goregaon(Mumbai University) with 9.0 CGPA in
+          I have completed my Masters Degree from Patkar Varde College, Goregaon(Mumbai University) with 9.0
+          CGPA in
           March
           2023.I did my SSC from Maharashtra State Board with 87 percent in the Year 2016,
-          After that i have Completed my Intermediate from Viva College, Virar and scored 76 percent. After that i went
-          to complete my graduation in Bachelor of Science in information Technology(BscIT) from Viva College, Virar in
-          the year 2018 and I get graduated in the year 2021. Currently i am working at Markweb Solutions as a FrontEnd
+          After that i have Completed my Intermediate from Viva College, Virar and scored 76 percent. After
+          that i went
+          to complete my graduation in Bachelor of Science in information Technology(BscIT) from Viva College,
+          Virar in
+          the year 2018 and I get graduated in the year 2021. Currently i am working at Markweb Solutions as a
+          FrontEnd
           Web Developer.
           <br />
         </p>
@@ -180,8 +185,8 @@
       <form>
         <input type="text" placeholder="Your Name" name="name" />
         <input type="email" name="email" id="" placeholder="Your Email" />
-        <textarea name="msg" id="" cols="30" rows="10" placeholder="Write Message Here..."></textarea>
-        <input type="submit" value="Send" class="contact-button" name="send" onclick="connect();">
+        <textarea name="msgbox" id="" cols="30" rows="10" placeholder="Write Message Here..."></textarea>
+        <input type="submit" value="Send" class="contact-button" name="sendbtn">
       </form>
     </div>
   </section>
@@ -217,3 +222,69 @@
 </body>
 
 </html>
+
+<?php
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+
+
+
+if (isset($_POST['sendbtn'])) {
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $msg = $_POST['msgbox'];
+
+  // $conn = mysqli_connect('localhost', 'root', '', 'contactform');
+  // if ($conn) {
+  //     $myquery = "INSERT INTO `contactdata` (`Sr no.`, `Email`, `Message`) VALUES ('', '$email', '$msg')";
+
+  //     mysqli_query($conn, $myquery);
+  //     echo "inserted successfully";
+  // } else {
+  //     echo "not connected";
+  // }
+
+
+
+
+  //Load Composer's autoloader
+  require 'PHPMailer/Exception.php';
+  require 'PHPMailer/PHPMailer.php';
+  require 'PHPMailer/SMTP.php';
+
+  //Create an instance; passing `true` enables exceptions
+  $mail = new PHPMailer(true);
+
+  try {
+    //Server settings
+    //Enable verbose debug output
+    $mail->isSMTP();                                            //Send using SMTP
+    $mail->Host = ' smtp.gmail.com';                     //Set the SMTP server to send through
+    $mail->SMTPAuth = true;                                   //Enable SMTP authentication
+    $mail->Username = 'avanishav73@gmail.com';                     //SMTP username
+    $mail->Password = 'gqez fsna bazu bien';                               //SMTP password
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+    $mail->Port = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+    //Recipients
+    $mail->setFrom('avanishav73@gmail.com', 'Portfolio Contact Form Enquiry');
+    $mail->addAddress("$email", 'Enquiry From Portfolio Website');     //Add a recipient
+
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Contact Form for Enquiry';
+    $mail->Body = "Sender name: $name <br> Sender email: $email <br> message: $msg <br>";
+
+    $mail->send();
+    echo '<div class="success">Message has been sent</div>';
+
+  } catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+  }
+
+}
+?>
