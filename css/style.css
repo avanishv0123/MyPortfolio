@@ -388,7 +388,7 @@ button:hover {
   border: 1px solid #5805ff;
   padding: 2px;
   border-radius: 10px;
-  object-fit: fill;
+  object-fit: contain;
   height: 100%;
 }
 .portfolio-img img:hover {
